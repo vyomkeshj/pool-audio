@@ -61,33 +61,6 @@ Které zdravé stroje běží spolu s M1:
 - **M4** — odsávací ventilátor (téměř neslyšný)
 - **aerace** — vzduchový injektor (zap/vyp)""")
 
-    st.divider()
-    st.subheader("Hlavní výsledky \\*")
-    cols = st.columns(4)
-    cols[0].metric("Úroveň výtlaku", "do ±1 = 1,00", "přesně ≈0,98 (kamera)")
-    cols[1].metric("Úroveň sání", "do ±1 = 1,00", "MAE ≈0,35 kroku")
-    cols[2].metric("Aerace zap/vyp", "AUC 1,00 (kamera)", "F1 0,97–1,00")
-    cols[3].metric("Který stroj", "M3 ≈1,0, M2 ≈0,9", "M4 těžké na mic")
-    st.caption("13 850 zvukových souborů · 7 nahrávacích kampaní · modely trénované "
-               "zvlášť pro každý typ senzoru · v postranním panelu projděte signatury, "
-               "modely a živou ukázku.")
-    st.divider()
-    st.markdown("""
-\\* **Jak byly tyto hodnoty změřeny (a proč jim lze věřit).** Každé číslo pochází
-z *křížové validace s odděleným testem*, která nikdy nedovolí, aby se nahrávka — nebo
-její téměř-duplikát — objevila současně v tréninku i testu. Hodnoty tedy odpovídají
-skutečně nové nahrávce, ne zapamatování. Tři opatření:
-
-- **Sourozenecké kanály drženy pohromadě.** Každá nahrávka zachycuje 16 senzorů
-  (8 mikrofonů + 8 kamer) ve *stejném okamžiku*; tyto téměř identické sourozence
-  nikdy nerozdělíme mezi trénink a test. *(Naivní rozdělení přesnost nadhodnotí —
-  např. 0,977 → 0,993.)*
-- **Celé konfigurace ventilů oddělené** (včetně všech opakování a zašuměných verzí) —
-  model tak nemůže ohodnotit nahrávku podle jejího sourozence se stejným nastavením.
-- **Oddělené i celé nahrávací dny a celé úrovně omezení**, aby se ověřilo, že to
-  funguje na nový den a že umí úrovně interpolovat.
-""")
-
 
 def page_dataset():
     st.title("📁 Dataset a prostor parametrů")

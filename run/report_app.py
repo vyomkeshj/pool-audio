@@ -129,32 +129,6 @@ Which healthy machines are on alongside M1:
 - **M4** — exhaust fan (near-silent)
 - **aeration** — air injector (on/off)""")
 
-    st.divider()
-    st.subheader("Headline results \\*")
-    cols = st.columns(4)
-    cols[0].metric("Discharge level", "within-1 = 1.00", "exact ≈0.98 (cam)")
-    cols[1].metric("Suction level", "within-1 = 1.00", "MAE ≈0.35 steps")
-    cols[2].metric("Aeration on/off", "AUC 1.00 (cam)", "F1 0.97–1.00")
-    cols[3].metric("Which machine", "M3 ≈1.0, M2 ≈0.9", "M4 hard on mic")
-    st.caption("13,850 channel-files · 7 recording campaigns · models trained per "
-               "sensor family · use the sidebar to walk through the signatures, "
-               "models and a live demo.")
-    st.divider()
-    st.markdown("""
-\\* **How these scores were measured (and why you can trust them).** Every number
-comes from *held-out cross-validation* that never lets a recording — or a
-near-duplicate of it — sit in both training and test, so the scores reflect a
-genuinely new recording, not memorisation. Three precautions:
-
-- **Sibling channels kept together.** Each recording captures 16 sensors (8 mics +
-  8 cameras) at the *same instant*; we never split those near-identical siblings
-  across train/test. *(A naive split inflates accuracy — e.g. 0.977 → 0.993.)*
-- **Whole valve configs held out** (with all their repeats and noisy versions) — so
-  the model can't score a clip from a sibling recording of its own setting.
-- **Whole recording-days and whole restriction-levels held out** too, to test that
-  it transfers to a new day and reads levels it can interpolate.
-""")
-
 
 def page_dataset():
     st.title("📁 The dataset & parameter space")
