@@ -1,0 +1,389 @@
+{
+  "_note": "Device-aware operating-condition models. Healthy equipment; M1/M2 large pumps, M3/M4 exhaust fans. Mics and cameras are different sensors (modelled separately). CV grouped by config.",
+  "channel_informativeness": {
+    "discharge_severity": [
+      {
+        "device": "cam5",
+        "spearman": 0.93,
+        "within_1": 0.98
+      },
+      {
+        "device": "cam3",
+        "spearman": 0.91,
+        "within_1": 0.95
+      },
+      {
+        "device": "cam7",
+        "spearman": 0.91,
+        "within_1": 0.95
+      },
+      {
+        "device": "cam2",
+        "spearman": 0.89,
+        "within_1": 0.93
+      },
+      {
+        "device": "cam4",
+        "spearman": 0.88,
+        "within_1": 0.91
+      },
+      {
+        "device": "mic1",
+        "spearman": 0.88,
+        "within_1": 0.93
+      },
+      {
+        "device": "cam1",
+        "spearman": 0.86,
+        "within_1": 0.91
+      },
+      {
+        "device": "mic3",
+        "spearman": 0.86,
+        "within_1": 0.91
+      },
+      {
+        "device": "cam6",
+        "spearman": 0.82,
+        "within_1": 0.82
+      },
+      {
+        "device": "cam8",
+        "spearman": 0.81,
+        "within_1": 0.85
+      },
+      {
+        "device": "mic4",
+        "spearman": 0.8,
+        "within_1": 0.82
+      },
+      {
+        "device": "mic2",
+        "spearman": 0.72,
+        "within_1": 0.75
+      },
+      {
+        "device": "mic5",
+        "spearman": 0.71,
+        "within_1": 0.7
+      },
+      {
+        "device": "mic8",
+        "spearman": 0.71,
+        "within_1": 0.71
+      },
+      {
+        "device": "mic7",
+        "spearman": 0.3,
+        "within_1": 0.49
+      },
+      {
+        "device": "mic6",
+        "spearman": 0.24,
+        "within_1": 0.49
+      }
+    ],
+    "suction_severity": [
+      {
+        "device": "cam1",
+        "spearman": 0.71,
+        "within_1": 0.9
+      },
+      {
+        "device": "mic1",
+        "spearman": 0.71,
+        "within_1": 0.94
+      },
+      {
+        "device": "mic2",
+        "spearman": 0.6,
+        "within_1": 0.89
+      },
+      {
+        "device": "cam4",
+        "spearman": 0.58,
+        "within_1": 0.86
+      },
+      {
+        "device": "mic7",
+        "spearman": 0.57,
+        "within_1": 0.9
+      },
+      {
+        "device": "mic4",
+        "spearman": 0.56,
+        "within_1": 0.92
+      },
+      {
+        "device": "cam2",
+        "spearman": 0.52,
+        "within_1": 0.81
+      },
+      {
+        "device": "cam7",
+        "spearman": 0.52,
+        "within_1": 0.88
+      },
+      {
+        "device": "mic8",
+        "spearman": 0.51,
+        "within_1": 0.86
+      },
+      {
+        "device": "mic6",
+        "spearman": 0.49,
+        "within_1": 0.88
+      },
+      {
+        "device": "cam8",
+        "spearman": 0.47,
+        "within_1": 0.86
+      },
+      {
+        "device": "cam3",
+        "spearman": 0.45,
+        "within_1": 0.78
+      },
+      {
+        "device": "cam5",
+        "spearman": 0.44,
+        "within_1": 0.85
+      },
+      {
+        "device": "mic3",
+        "spearman": 0.43,
+        "within_1": 0.81
+      },
+      {
+        "device": "cam6",
+        "spearman": 0.39,
+        "within_1": 0.84
+      },
+      {
+        "device": "mic5",
+        "spearman": 0.36,
+        "within_1": 0.83
+      }
+    ]
+  },
+  "blockage": {
+    "discharge_severity": {
+      "mic": {
+        "n": 5080,
+        "optimistic_grouped_cv": {
+          "spearman": 0.635,
+          "mae_steps": 1.244,
+          "r2": 0.408,
+          "within_1": 0.67
+        },
+        "leakage_honest_holdout": {
+          "held_out_levels": [
+            2,
+            4,
+            8
+          ],
+          "mae_steps": 0.939,
+          "within_1": 0.801
+        }
+      },
+      "cam": {
+        "n": 5080,
+        "optimistic_grouped_cv": {
+          "spearman": 0.866,
+          "mae_steps": 0.735,
+          "r2": 0.768,
+          "within_1": 0.896
+        },
+        "leakage_honest_holdout": {
+          "held_out_levels": [
+            2,
+            4,
+            8
+          ],
+          "mae_steps": 0.735,
+          "within_1": 0.937
+        }
+      }
+    },
+    "suction_severity": {
+      "mic": {
+        "n": 5080,
+        "optimistic_grouped_cv": {
+          "spearman": 0.493,
+          "mae_steps": 0.799,
+          "r2": 0.263,
+          "within_1": 0.869
+        },
+        "leakage_honest_holdout": {
+          "held_out_levels": [
+            2,
+            4
+          ],
+          "mae_steps": 1.114,
+          "within_1": 0.714
+        }
+      },
+      "cam": {
+        "n": 5080,
+        "optimistic_grouped_cv": {
+          "spearman": 0.547,
+          "mae_steps": 0.753,
+          "r2": 0.31,
+          "within_1": 0.875
+        },
+        "leakage_honest_holdout": {
+          "held_out_levels": [
+            2,
+            4
+          ],
+          "mae_steps": 1.108,
+          "within_1": 0.739
+        }
+      }
+    }
+  },
+  "restriction_detect": {
+    "suction_present": {
+      "mic": {
+        "n_pos": 3688,
+        "accuracy": 0.766,
+        "f1": 0.85,
+        "precision": 0.793,
+        "recall": 0.918
+      },
+      "cam": {
+        "n_pos": 3688,
+        "accuracy": 0.797,
+        "f1": 0.869,
+        "precision": 0.817,
+        "recall": 0.928
+      }
+    },
+    "discharge_present": {
+      "mic": {
+        "n_pos": 4312,
+        "accuracy": 0.811,
+        "f1": 0.895,
+        "precision": 0.845,
+        "recall": 0.951
+      },
+      "cam": {
+        "n_pos": 4312,
+        "accuracy": 0.816,
+        "f1": 0.897,
+        "precision": 0.852,
+        "recall": 0.948
+      }
+    }
+  },
+  "restriction_location": {
+    "mic": {
+      "n": 5080,
+      "accuracy": 0.64,
+      "balanced_accuracy": 0.307,
+      "macro_f1": 0.295,
+      "per_class_f1": {
+        "open": 0.0,
+        "suction": 0.014,
+        "discharge": 0.363,
+        "both": 0.8
+      }
+    },
+    "cam": {
+      "n": 5080,
+      "accuracy": 0.668,
+      "balanced_accuracy": 0.336,
+      "macro_f1": 0.331,
+      "per_class_f1": {
+        "open": 0.0,
+        "suction": 0.03,
+        "discharge": 0.473,
+        "both": 0.819
+      }
+    }
+  },
+  "motor_presence": {
+    "mic": {
+      "per_machine": {
+        "M2": {
+          "f1": 0.653,
+          "precision": 0.643,
+          "recall": 0.662
+        },
+        "M3": {
+          "f1": 0.86,
+          "precision": 0.881,
+          "recall": 0.84
+        },
+        "M4": {
+          "f1": 0.623,
+          "precision": 0.594,
+          "recall": 0.656
+        }
+      },
+      "subset_accuracy": 0.354
+    },
+    "cam": {
+      "per_machine": {
+        "M2": {
+          "f1": 0.682,
+          "precision": 0.662,
+          "recall": 0.703
+        },
+        "M3": {
+          "f1": 0.839,
+          "precision": 0.805,
+          "recall": 0.877
+        },
+        "M4": {
+          "f1": 0.687,
+          "precision": 0.653,
+          "recall": 0.725
+        }
+      },
+      "subset_accuracy": 0.407
+    }
+  },
+  "which_motor": {
+    "mic": {
+      "n": 448,
+      "accuracy": 0.531,
+      "balanced_accuracy": 0.531,
+      "per_class_f1": {
+        "none": 0.384,
+        "M2": 0.533,
+        "M3": 0.771,
+        "M4": 0.414
+      }
+    },
+    "cam": {
+      "n": 448,
+      "accuracy": 0.545,
+      "balanced_accuracy": 0.545,
+      "per_class_f1": {
+        "none": 0.448,
+        "M2": 0.549,
+        "M3": 0.675,
+        "M4": 0.482
+      }
+    }
+  },
+  "aeration": {
+    "n_on_sessions": 256,
+    "on_rms_db": -43.5,
+    "off_rms_db": -45.6,
+    "CAVEAT": "Single valve config (vin1/vout1) and a uniform level offset; cannot be cross-validated and likely a recording artifact (pumps idle / different gain). NOT a validated aeration detector. Re-record with pumps running."
+  },
+  "channel_fusion_discharge_severity": {
+    "mic": {
+      "n_sessions": 635,
+      "spearman": 0.817,
+      "within_1": 0.843
+    },
+    "cam": {
+      "n_sessions": 635,
+      "spearman": 0.898,
+      "within_1": 0.924
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "isolation": "M2=0,M4=0,aeration=0; M3 on vs off; 3-9 kHz envelope demod",
+  "n_on": 224,
+  "shaft_freq_hz": 21.3,
+  "shaft_rpm": 1278.0,
+  "harmonics_detected": [
+    {
+      "order": 1,
+      "freq_hz": 21.26,
+      "amp": 0.0
+    },
+    {
+      "order": 2,
+      "freq_hz": 42.53,
+      "amp": 0.0
+    },
+    {
+      "order": 3,
+      "freq_hz": 63.79,
+      "amp": 0.0
+    },
+    {
+      "order": 4,
+      "freq_hz": 85.33,
+      "amp": 0.0
+    },
+    {
+      "order": 5,
+      "freq_hz": 106.59,
+      "amp": 0.0
+    },
+    {
+      "order": 6,
+      "freq_hz": 127.85,
+      "amp": 0.0
+    }
+  ],
+  "top_envelope_peaks_hz": [
+    21.26,
+    7.0,
+    20.46,
+    14.27,
+    42.8,
+    35.53,
+    81.83,
+    56.26
+  ],
+  "haystack_center_hz": 5862.0,
+  "interpretation": "Dominant 1x rotational line at 21.3 Hz with a 2x harmonic = mass imbalance from a broken/missing fan blade (once-per-rev heavy spot). 21.3 Hz (~1280 rpm) does not match a clean 50 Hz sub-multiple (25/16.7 Hz), so the impeller likely runs at its own (geared/independent) speed rather than line-locked."
+}

@@ -1,0 +1,779 @@
+{
+  "data": {
+    "n_files_total": 13850,
+    "n_m1_only_files": 12026,
+    "discharge_levels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      8,
+      11
+    ],
+    "suction_levels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      8
+    ]
+  },
+  "severity_config_grouped": {
+    "discharge": {
+      "mic": {
+        "MAE_steps": 0.0,
+        "within1": 1.0,
+        "exact_acc": 1.0,
+        "spearman": 0.9911904435112614,
+        "n": 6010,
+        "n_configs": 34,
+        "MAE_valve_units": 0.0,
+        "within1_no_level_feat": 1.0
+      },
+      "cam": {
+        "MAE_steps": 0.0,
+        "within1": 1.0,
+        "exact_acc": 1.0,
+        "spearman": 0.9911954502618708,
+        "n": 6016,
+        "n_configs": 34,
+        "MAE_valve_units": 0.0,
+        "within1_no_level_feat": 1.0
+      }
+    },
+    "suction": {
+      "mic": {
+        "MAE_steps": 0.0,
+        "within1": 1.0,
+        "exact_acc": 1.0,
+        "spearman": 0.9822999448583671,
+        "n": 6010,
+        "n_configs": 34,
+        "MAE_valve_units": 0.0,
+        "within1_no_level_feat": 1.0
+      },
+      "cam": {
+        "MAE_steps": 0.0,
+        "within1": 1.0,
+        "exact_acc": 1.0,
+        "spearman": 0.9814527960971308,
+        "n": 6016,
+        "n_configs": 34,
+        "MAE_valve_units": 0.0,
+        "within1_no_level_feat": 1.0
+      }
+    }
+  },
+  "severity_leave_campaign_out": {
+    "discharge": {
+      "mic": {
+        "pooled": {
+          "MAE_steps": 0.0,
+          "within1": 1.0,
+          "exact_acc": 1.0,
+          "spearman": 0.9904151200531895,
+          "n": 6010
+        },
+        "per_campaign": {
+          "Testbedmotor": {
+            "MAE_steps": 0.0,
+            "within1": 1.0,
+            "exact_acc": 1.0,
+            "spearman": 1.0,
+            "n": 528,
+            "n_levels": 3
+          },
+          "Testbedmotor5_14": {
+            "MAE_steps": 0.0,
+            "within1": 1.0,
+            "exact_acc": 1.0,
+            "spearman": 1.0,
+            "n": 1968,
+            "n_levels": 7
+          },
+          "Testbedmotor5_15": {
+            "MAE_steps": 0.0,
+            "within1": 1.0,
+            "exact_acc": 1.0,
+            "spearman": 1.0,
+            "n": 1592,
+            "n_levels": 7
+          },
+          "testbed_motor_audio": {
+            "MAE_steps": 0.0,
+            "within1": 1.0,
+            "exact_acc": 1.0,
+            "spearman": 1.0,
+            "n": 880,
+            "n_levels": 4
+          },
+          "testbedmotor5_19": {
+            "MAE_steps": 0.0,
+            "within1": 1.0,
+            "exact_acc": 1.0,
+            "spearman": 1.0,
+            "n": 584,
+            "n_levels": 4
+          },
+          "testbedmotor5_20": {
+            "MAE_steps": 0.0,
+            "within1": 1.0,
+            "exact_acc": 1.0,
+            "spearman": 1.0,
+            "n": 346,
+            "n_levels": 3
+          },
+          "testbedmotor5_25": {
+            "MAE_steps": 0.0,
+            "within1": 1.0,
+            "exact_acc": 1.0,
+            "spearman": 1.0,
+            "n": 112,
+            "n_levels": 7
+          }
+        }
+      },
+      "cam": {
+        "pooled": {
+          "MAE_steps": 0.0,
+          "within1": 1.0,
+          "exact_acc": 1.0,
+          "spearman": 0.990412813255097,
+          "n": 6016
+        },
+        "per_campaign": {
+          "Testbedmotor": {
+            "MAE_steps": 0.0,
+            "within1": 1.0,
+            "exact_acc": 1.0,
+            "spearman": 1.0,
+            "n": 528,
+            "n_levels": 3
+          },
+          "Testbedmotor5_14": {
+            "MAE_steps": 0.0,
+            "within1": 1.0,
+            "exact_acc": 1.0,
+            "spearman": 1.0,
+            "n": 1968,
+            "n_levels": 7
+          },
+          "Testbedmotor5_15": {
+            "MAE_steps": 0.0,
+            "within1": 1.0,
+            "exact_acc": 1.0,
+            "spearman": 1.0,
+            "n": 1592,
+            "n_levels": 7
+          },
+          "testbed_motor_audio": {
+            "MAE_steps": 0.0,
+            "within1": 1.0,
+            "exact_acc": 1.0,
+            "spearman": 1.0,
+            "n": 880,
+            "n_levels": 4
+          },
+          "testbedmotor5_19": {
+            "MAE_steps": 0.0,
+            "within1": 1.0,
+            "exact_acc": 1.0,
+            "spearman": 1.0,
+            "n": 584,
+            "n_levels": 4
+          },
+          "testbedmotor5_20": {
+            "MAE_steps": 0.0,
+            "within1": 1.0,
+            "exact_acc": 1.0,
+            "spearman": 1.0,
+            "n": 352,
+            "n_levels": 3
+          },
+          "testbedmotor5_25": {
+            "MAE_steps": 0.0,
+            "within1": 1.0,
+            "exact_acc": 1.0,
+            "spearman": 1.0,
+            "n": 112,
+            "n_levels": 7
+          }
+        }
+      }
+    },
+    "suction": {
+      "mic": {
+        "pooled": {
+          "MAE_steps": 0.3530782029950083,
+          "within1": 1.0,
+          "exact_acc": 0.6469217970049916,
+          "spearman": 0.903879117650107,
+          "n": 6010
+        },
+        "per_campaign": {
+          "Testbedmotor5_14": {
+            "MAE_steps": 0.0,
+            "within1": 1.0,
+            "exact_acc": 1.0,
+            "spearman": 0.9999999999999999,
+            "n": 1968,
+            "n_levels": 3
+          },
+          "Testbedmotor5_15": {
+            "MAE_steps": 0.7688442211055276,
+            "within1": 1.0,
+            "exact_acc": 0.23115577889447236,
+            "spearman": 0.2362635749715665,
+            "n": 1592,
+            "n_levels": 3
+          },
+          "testbed_motor_audio": {
+            "MAE_steps": 0.0,
+            "within1": 1.0,
+            "exact_acc": 1.0,
+            "spearman": 1.0,
+            "n": 880,
+            "n_levels": 2
+          },
+          "testbedmotor5_19": {
+            "MAE_steps": 0.9726027397260274,
+            "within1": 1.0,
+            "exact_acc": 0.0273972602739726,
+            "spearman": 1.0,
+            "n": 584,
+            "n_levels": 2
+          },
+          "testbedmotor5_20": {
+            "MAE_steps": 0.953757225433526,
+            "within1": 1.0,
+            "exact_acc": 0.046242774566473986,
+            "spearman": 1.0,
+            "n": 346,
+            "n_levels": 2
+          }
+        }
+      },
+      "cam": {
+        "pooled": {
+          "MAE_steps": 0.3537234042553192,
+          "within1": 1.0,
+          "exact_acc": 0.6462765957446809,
+          "spearman": 0.9041758570100302,
+          "n": 6016
+        },
+        "per_campaign": {
+          "Testbedmotor5_14": {
+            "MAE_steps": 0.0,
+            "within1": 1.0,
+            "exact_acc": 1.0,
+            "spearman": 0.9999999999999999,
+            "n": 1968,
+            "n_levels": 3
+          },
+          "Testbedmotor5_15": {
+            "MAE_steps": 0.7688442211055276,
+            "within1": 1.0,
+            "exact_acc": 0.23115577889447236,
+            "spearman": 0.2362635749715665,
+            "n": 1592,
+            "n_levels": 3
+          },
+          "testbed_motor_audio": {
+            "MAE_steps": 0.0,
+            "within1": 1.0,
+            "exact_acc": 1.0,
+            "spearman": 1.0,
+            "n": 880,
+            "n_levels": 2
+          },
+          "testbedmotor5_19": {
+            "MAE_steps": 0.9726027397260274,
+            "within1": 1.0,
+            "exact_acc": 0.0273972602739726,
+            "spearman": 1.0,
+            "n": 584,
+            "n_levels": 2
+          },
+          "testbedmotor5_20": {
+            "MAE_steps": 0.9545454545454546,
+            "within1": 1.0,
+            "exact_acc": 0.045454545454545456,
+            "spearman": 1.0,
+            "n": 352,
+            "n_levels": 2
+          }
+        }
+      }
+    }
+  },
+  "severity_leave_level_out": {
+    "discharge": {
+      "mic": {
+        "1": {
+          "n": 976,
+          "mean_pred_rank": 1.0000000000000921,
+          "true_rank": 0,
+          "MAE_steps": 1.0,
+          "within1": 1.0
+        },
+        "2": {
+          "n": 896,
+          "mean_pred_rank": 1.2087556902136745e-13,
+          "true_rank": 1,
+          "MAE_steps": 1.0,
+          "within1": 1.0
+        },
+        "3": {
+          "n": 888,
+          "mean_pred_rank": 3.000000000000003,
+          "true_rank": 2,
+          "MAE_steps": 1.0,
+          "within1": 1.0
+        },
+        "4": {
+          "n": 760,
+          "mean_pred_rank": 3.999999999999957,
+          "true_rank": 3,
+          "MAE_steps": 1.0,
+          "within1": 1.0
+        },
+        "5": {
+          "n": 896,
+          "mean_pred_rank": 4.999999999999913,
+          "true_rank": 4,
+          "MAE_steps": 1.0,
+          "within1": 1.0
+        },
+        "8": {
+          "n": 874,
+          "mean_pred_rank": 3.9999999999999427,
+          "true_rank": 5,
+          "MAE_steps": 1.0,
+          "within1": 1.0
+        },
+        "11": {
+          "n": 720,
+          "mean_pred_rank": 4.999999999999902,
+          "true_rank": 6,
+          "MAE_steps": 1.0,
+          "within1": 1.0
+        }
+      },
+      "cam": {
+        "1": {
+          "n": 976,
+          "mean_pred_rank": 1.0000000000000921,
+          "true_rank": 0,
+          "MAE_steps": 1.0,
+          "within1": 1.0
+        },
+        "2": {
+          "n": 896,
+          "mean_pred_rank": 1.2095572336554877e-13,
+          "true_rank": 1,
+          "MAE_steps": 1.0,
+          "within1": 1.0
+        },
+        "3": {
+          "n": 888,
+          "mean_pred_rank": 1.0000000000000766,
+          "true_rank": 2,
+          "MAE_steps": 1.0,
+          "within1": 1.0
+        },
+        "4": {
+          "n": 760,
+          "mean_pred_rank": 2.0000000000000315,
+          "true_rank": 3,
+          "MAE_steps": 1.0,
+          "within1": 1.0
+        },
+        "5": {
+          "n": 896,
+          "mean_pred_rank": 2.9999999999999867,
+          "true_rank": 4,
+          "MAE_steps": 1.0,
+          "within1": 1.0
+        },
+        "8": {
+          "n": 880,
+          "mean_pred_rank": 3.9999999999999427,
+          "true_rank": 5,
+          "MAE_steps": 1.0,
+          "within1": 1.0
+        },
+        "11": {
+          "n": 720,
+          "mean_pred_rank": 4.999999999999902,
+          "true_rank": 6,
+          "MAE_steps": 1.0,
+          "within1": 1.0
+        }
+      }
+    },
+    "suction": {
+      "mic": {
+        "1": {
+          "n": 1424,
+          "mean_pred_rank": 1.0000000000000548,
+          "true_rank": 0,
+          "MAE_steps": 1.0,
+          "within1": 1.0
+        },
+        "2": {
+          "n": 1232,
+          "mean_pred_rank": 7.887124318802051e-14,
+          "true_rank": 1,
+          "MAE_steps": 1.0,
+          "within1": 1.0
+        },
+        "3": {
+          "n": 1232,
+          "mean_pred_rank": 2.9999999999999574,
+          "true_rank": 2,
+          "MAE_steps": 1.0,
+          "within1": 1.0
+        },
+        "4": {
+          "n": 1224,
+          "mean_pred_rank": 3.999999999999907,
+          "true_rank": 3,
+          "MAE_steps": 1.0,
+          "within1": 1.0
+        },
+        "5": {
+          "n": 568,
+          "mean_pred_rank": 4.999999999999866,
+          "true_rank": 4,
+          "MAE_steps": 1.0,
+          "within1": 1.0
+        },
+        "8": {
+          "n": 330,
+          "mean_pred_rank": 3.9999999999999103,
+          "true_rank": 5,
+          "MAE_steps": 1.0,
+          "within1": 1.0
+        }
+      },
+      "cam": {
+        "1": {
+          "n": 1424,
+          "mean_pred_rank": 1.0000000000000548,
+          "true_rank": 0,
+          "MAE_steps": 1.0,
+          "within1": 1.0
+        },
+        "2": {
+          "n": 1232,
+          "mean_pred_rank": 7.900728074431713e-14,
+          "true_rank": 1,
+          "MAE_steps": 1.0,
+          "within1": 1.0
+        },
+        "3": {
+          "n": 1232,
+          "mean_pred_rank": 2.9999999999999574,
+          "true_rank": 2,
+          "MAE_steps": 1.0,
+          "within1": 1.0
+        },
+        "4": {
+          "n": 1224,
+          "mean_pred_rank": 1.9999999999999851,
+          "true_rank": 3,
+          "MAE_steps": 1.0,
+          "within1": 1.0
+        },
+        "5": {
+          "n": 568,
+          "mean_pred_rank": 2.9999999999999494,
+          "true_rank": 4,
+          "MAE_steps": 1.0,
+          "within1": 1.0
+        },
+        "8": {
+          "n": 336,
+          "mean_pred_rank": 3.9999999999999107,
+          "true_rank": 5,
+          "MAE_steps": 1.0,
+          "within1": 1.0
+        }
+      }
+    }
+  },
+  "robustness_clean_trained": {
+    "discharge": {
+      "mic": {
+        "N": {
+          "MAE_steps": 0.0,
+          "within1": 1.0,
+          "exact_acc": 1.0,
+          "spearman": 1.0,
+          "n": 736
+        },
+        "A": {
+          "MAE_steps": 0.0,
+          "within1": 1.0,
+          "exact_acc": 1.0,
+          "spearman": 1.0,
+          "n": 1080
+        },
+        "B": {
+          "MAE_steps": 0.0,
+          "within1": 1.0,
+          "exact_acc": 1.0,
+          "spearman": 1.0,
+          "n": 1056
+        },
+        "C": {
+          "MAE_steps": 0.0,
+          "within1": 1.0,
+          "exact_acc": 1.0,
+          "spearman": 1.0,
+          "n": 1056
+        },
+        "D": {
+          "MAE_steps": 0.0,
+          "within1": 1.0,
+          "exact_acc": 1.0,
+          "spearman": 0.9999999999999998,
+          "n": 1048
+        },
+        "E": {
+          "MAE_steps": 0.0,
+          "within1": 1.0,
+          "exact_acc": 1.0,
+          "spearman": 1.0,
+          "n": 1034
+        }
+      },
+      "cam": {
+        "N": {
+          "MAE_steps": 0.0,
+          "within1": 1.0,
+          "exact_acc": 1.0,
+          "spearman": 1.0,
+          "n": 736
+        },
+        "A": {
+          "MAE_steps": 0.0,
+          "within1": 1.0,
+          "exact_acc": 1.0,
+          "spearman": 1.0,
+          "n": 1080
+        },
+        "B": {
+          "MAE_steps": 0.0,
+          "within1": 1.0,
+          "exact_acc": 1.0,
+          "spearman": 1.0,
+          "n": 1056
+        },
+        "C": {
+          "MAE_steps": 0.0,
+          "within1": 1.0,
+          "exact_acc": 1.0,
+          "spearman": 1.0,
+          "n": 1056
+        },
+        "D": {
+          "MAE_steps": 0.0,
+          "within1": 1.0,
+          "exact_acc": 1.0,
+          "spearman": 0.9999999999999998,
+          "n": 1048
+        },
+        "E": {
+          "MAE_steps": 0.0,
+          "within1": 1.0,
+          "exact_acc": 1.0,
+          "spearman": 0.9999999999999998,
+          "n": 1040
+        }
+      }
+    },
+    "suction": {
+      "mic": {
+        "N": {
+          "MAE_steps": 0.0,
+          "within1": 1.0,
+          "exact_acc": 1.0,
+          "spearman": 1.0,
+          "n": 736
+        },
+        "A": {
+          "MAE_steps": 0.03888888888888889,
+          "within1": 1.0,
+          "exact_acc": 0.9611111111111111,
+          "spearman": 0.999264785338556,
+          "n": 1080
+        },
+        "B": {
+          "MAE_steps": 0.004734848484848485,
+          "within1": 1.0,
+          "exact_acc": 0.9952651515151515,
+          "spearman": 0.999948884480048,
+          "n": 1056
+        },
+        "C": {
+          "MAE_steps": 0.021780303030303032,
+          "within1": 1.0,
+          "exact_acc": 0.978219696969697,
+          "spearman": 0.9997240596363042,
+          "n": 1056
+        },
+        "D": {
+          "MAE_steps": 0.016221374045801526,
+          "within1": 1.0,
+          "exact_acc": 0.9837786259541985,
+          "spearman": 0.999814049370527,
+          "n": 1048
+        },
+        "E": {
+          "MAE_steps": 0.0183752417794971,
+          "within1": 1.0,
+          "exact_acc": 0.9816247582205029,
+          "spearman": 0.9998012353504373,
+          "n": 1034
+        }
+      },
+      "cam": {
+        "N": {
+          "MAE_steps": 0.0,
+          "within1": 1.0,
+          "exact_acc": 1.0,
+          "spearman": 1.0,
+          "n": 736
+        },
+        "A": {
+          "MAE_steps": 0.0,
+          "within1": 1.0,
+          "exact_acc": 1.0,
+          "spearman": 0.9999999999999998,
+          "n": 1080
+        },
+        "B": {
+          "MAE_steps": 0.0,
+          "within1": 1.0,
+          "exact_acc": 1.0,
+          "spearman": 1.0,
+          "n": 1056
+        },
+        "C": {
+          "MAE_steps": 0.0,
+          "within1": 1.0,
+          "exact_acc": 1.0,
+          "spearman": 1.0,
+          "n": 1056
+        },
+        "D": {
+          "MAE_steps": 0.0,
+          "within1": 1.0,
+          "exact_acc": 1.0,
+          "spearman": 0.9999999999999998,
+          "n": 1048
+        },
+        "E": {
+          "MAE_steps": 0.0,
+          "within1": 1.0,
+          "exact_acc": 1.0,
+          "spearman": 1.0,
+          "n": 1040
+        }
+      }
+    }
+  },
+  "presence_config_grouped": {
+    "discharge": {
+      "mic": {
+        "acc": 0.7722129783693844,
+        "f1": 0.8696562886794249,
+        "bal_acc": 0.49152525124237156,
+        "n": 6010,
+        "n_pos": 5034
+      },
+      "cam": {
+        "acc": 0.7716090425531915,
+        "f1": 0.8673745173745174,
+        "bal_acc": 0.5220660941972417,
+        "n": 6016,
+        "n_pos": 5040
+      }
+    },
+    "suction": {
+      "mic": {
+        "acc": 0.8194675540765392,
+        "f1": 0.8866130212143379,
+        "bal_acc": 0.7023119643565909,
+        "n": 6010,
+        "n_pos": 4586
+      },
+      "cam": {
+        "acc": 0.8685172872340425,
+        "f1": 0.9169030360331968,
+        "bal_acc": 0.7774916317582117,
+        "n": 6016,
+        "n_pos": 4592
+      }
+    }
+  },
+  "aeration": {
+    "n_on": 256,
+    "n_off": 1792,
+    "rms_db_on": -43.54860512763274,
+    "rms_db_off": -45.63213362702548,
+    "on_valve_configs": [
+      "1/1"
+    ],
+    "verdict": "Aeration recorded at a single valve config with a uniform ~34 dB level collapse on ON clips -> only on/off is present and it is confounded with gain. 'Aeration level' is NOT answerable from this data; re-record with pumps running.",
+    "presence_detector_5_25_only": {
+      "mic": {
+        "acc": 0.9892578125,
+        "f1": 0.9561752988047809,
+        "n": 1024,
+        "n_on": 128,
+        "note": "gain-invariant features only (rms_db dropped)"
+      },
+      "cam": {
+        "acc": 0.9990234375,
+        "f1": 0.996078431372549,
+        "n": 1024,
+        "n_on": 128,
+        "note": "gain-invariant features only (rms_db dropped)"
+      }
+    }
+  },
+  "feature_importance_cam_severity": {
+    "discharge": {
+      "tone_freq": 0.6224891682541301,
+      "zcr": 0.4686251166928879,
+      "band_100_150": 0.3300157320970966,
+      "band_250_350": 0.32740517268516917,
+      "band_50_100": 0.2701340417344461,
+      "band_4000_8000": 0.2678630948343568,
+      "ratio_high_vhigh": 0.1857557991830058,
+      "median_f": 0.1482782672577707,
+      "centroid": 0.09719341902569567,
+      "band_150_250": 0.0964878983541476,
+      "band_16000_22050": 0.08031054847685225,
+      "band_350_500": 0.07378133611432626
+    },
+    "suction": {
+      "band_16000_22050": 0.39689159099731286,
+      "band_100_150": 0.36226976845272885,
+      "zcr": 0.23014255994765911,
+      "band_350_500": 0.2080380430260033,
+      "band_50_100": 0.19201347597610602,
+      "band_0_50": 0.1849613946071255,
+      "crest": 0.1492858025154935,
+      "band_2000_4000": 0.1436956660848834,
+      "rms_db": 0.12793713371544566,
+      "band_150_250": 0.12714198448755826,
+      "band_250_350": 0.12025872954345647,
+      "tone_freq": 0.105596942066751
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "a_robustness": {
+    "classes": [
+      "normal",
+      "suction_blockage",
+      "discharge_blockage"
+    ],
+    "clean_cv_acc": 0.925,
+    "clean_trained_on_noise": {
+      "A": {
+        "acc": 0.885,
+        "macroF1": 0.689,
+        "n": 113
+      },
+      "B": {
+        "acc": 0.902,
+        "macroF1": 0.773,
+        "n": 112
+      },
+      "C": {
+        "acc": 0.955,
+        "macroF1": 0.909,
+        "n": 112
+      },
+      "D": {
+        "acc": 0.892,
+        "macroF1": 0.571,
+        "n": 111
+      },
+      "E": {
+        "acc": 0.92,
+        "macroF1": 0.704,
+        "n": 112
+      }
+    },
+    "augmented_cv_per_cat": {
+      "N": 0.944,
+      "A": 0.92,
+      "B": 0.946,
+      "C": 0.964,
+      "D": 0.937,
+      "E": 0.955
+    }
+  },
+  "b_severity": {
+    "discharge(valveOut)": {
+      "n": 175,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        8,
+        11
+      ],
+      "mae_steps": 0.349,
+      "r2": 0.933,
+      "spearman": 0.96,
+      "exact_acc": 0.749,
+      "within1_acc": 0.983
+    },
+    "suction(valveIn)": {
+      "n": 96,
+      "levels": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mae_steps": 0.319,
+      "r2": 0.724,
+      "spearman": 0.835,
+      "exact_acc": 0.771,
+      "within1_acc": 0.938
+    }
+  },
+  "c_multilabel": {
+    "n": 190,
+    "subset_acc": 0.837,
+    "hamming_loss": 0.053,
+    "per_label": {
+      "suction_blockage": {
+        "precision": 0.897,
+        "recall": 0.833,
+        "f1": 0.864,
+        "prevalence": 42
+      },
+      "discharge_blockage": {
+        "precision": 0.925,
+        "recall": 0.938,
+        "f1": 0.931,
+        "prevalence": 144
+      },
+      "aerating": {
+        "precision": 0.923,
+        "recall": 0.75,
+        "f1": 0.828,
+        "prevalence": 16
+      },
+      "multi_pump": {
+        "precision": 0.966,
+        "recall": 1.0,
+        "f1": 0.982,
+        "prevalence": 112
+      }
+    }
+  }
+}

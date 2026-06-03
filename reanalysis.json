@@ -1,0 +1,201 @@
+{
+  "_note": "Corrected analysis. Nothing is broken; M1/M2 large pumps, M3/M4 exhaust fans. Two axes: M1 flow restriction (monitoring) and auxiliary equipment presence.",
+  "equipment_signatures": {
+    "M2": {
+      "n_pairs": 32,
+      "d_rms_db": -4.04,
+      "d_centroid_hz": 85.0,
+      "d_tone_freq_hz": 175.0,
+      "d_mod_energy": -0.38,
+      "band_delta_db": {
+        "band_0_100": -0.92,
+        "band_100_250": 0.11,
+        "band_250_500": -0.0,
+        "band_500_1000": -0.33,
+        "band_1000_2000": -0.61,
+        "band_2000_4000": 0.29,
+        "band_4000_8000": 0.82,
+        "band_8000_16000": -1.52,
+        "band_16000_22050": -1.21
+      }
+    },
+    "M3": {
+      "n_pairs": 32,
+      "d_rms_db": 1.36,
+      "d_centroid_hz": 555.0,
+      "d_tone_freq_hz": -50.0,
+      "d_mod_energy": 0.07,
+      "band_delta_db": {
+        "band_0_100": -0.69,
+        "band_100_250": -0.72,
+        "band_250_500": -1.12,
+        "band_500_1000": 0.75,
+        "band_1000_2000": -1.04,
+        "band_2000_4000": -0.35,
+        "band_4000_8000": 4.45,
+        "band_8000_16000": -0.49,
+        "band_16000_22050": -1.17
+      }
+    },
+    "M4": {
+      "n_pairs": 32,
+      "d_rms_db": 0.33,
+      "d_centroid_hz": 8.0,
+      "d_tone_freq_hz": -18.0,
+      "d_mod_energy": 0.02,
+      "band_delta_db": {
+        "band_0_100": -0.26,
+        "band_100_250": -0.32,
+        "band_250_500": -0.03,
+        "band_500_1000": 0.08,
+        "band_1000_2000": 0.19,
+        "band_2000_4000": 0.59,
+        "band_4000_8000": 0.05,
+        "band_8000_16000": -0.33,
+        "band_16000_22050": -0.3
+      }
+    },
+    "aeration": {
+      "n_pairs": 8,
+      "d_rms_db": -34.78,
+      "d_centroid_hz": 234.0,
+      "d_tone_freq_hz": -576.0,
+      "d_mod_energy": -3.17,
+      "band_delta_db": {
+        "band_0_100": 1.34,
+        "band_100_250": 4.27,
+        "band_250_500": 1.43,
+        "band_500_1000": 1.22,
+        "band_1000_2000": -7.66,
+        "band_2000_4000": 3.8,
+        "band_4000_8000": 10.54,
+        "band_8000_16000": -10.76,
+        "band_16000_22050": -6.78
+      },
+      "caveat": "anomalous: aeration-ON clips are uniformly ~34 dB quieter and exist in only one valve config (vin1/vout1); the delta is dominated by a level collapse (pumps likely idle / different gain), not a reliable acoustic signature. Do not treat as a validated detector."
+    }
+  },
+  "m1_restriction": {
+    "n_sessions": 636,
+    "detection": {
+      "suction": {
+        "n_pos": 461,
+        "n_neg": 175,
+        "accuracy": 0.912,
+        "precision": 0.943,
+        "recall": 0.935,
+        "f1": 0.939
+      },
+      "discharge": {
+        "n_pos": 540,
+        "n_neg": 96,
+        "accuracy": 0.789,
+        "precision": 0.842,
+        "recall": 0.926,
+        "f1": 0.882
+      }
+    },
+    "robustness_clean_trained": {
+      "suction": {
+        "N": 0.806,
+        "A": 0.903,
+        "B": 0.893,
+        "C": 0.92,
+        "D": 0.946,
+        "E": 0.893
+      },
+      "discharge": {
+        "N": 0.677,
+        "A": 0.867,
+        "B": 0.884,
+        "C": 0.902,
+        "D": 0.865,
+        "E": 0.884
+      }
+    },
+    "severity": {
+      "suction": {
+        "levels": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "n": 636,
+        "optimistic_grouped_cv": {
+          "mae_steps": 0.587,
+          "r2": 0.535,
+          "spearman": 0.706,
+          "within_1": 0.931
+        },
+        "leakage_honest_holdout": {
+          "held_out_levels": [
+            2,
+            4
+          ],
+          "mae_steps": 1.137,
+          "spearman": -0.095,
+          "within_1": 0.831
+        }
+      },
+      "discharge": {
+        "levels": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          8,
+          11
+        ],
+        "n": 636,
+        "optimistic_grouped_cv": {
+          "mae_steps": 0.748,
+          "r2": 0.794,
+          "spearman": 0.876,
+          "within_1": 0.91
+        },
+        "leakage_honest_holdout": {
+          "held_out_levels": [
+            2,
+            4,
+            8
+          ],
+          "mae_steps": 0.65,
+          "spearman": 0.922,
+          "within_1": 0.982
+        }
+      }
+    }
+  },
+  "equipment_presence": {
+    "cross_validated": [
+      "M2",
+      "M3",
+      "M4"
+    ],
+    "per_machine": {
+      "M2": {
+        "n_on": 64,
+        "precision": 0.733,
+        "recall": 0.688,
+        "f1": 0.71
+      },
+      "M3": {
+        "n_on": 64,
+        "precision": 0.859,
+        "recall": 0.953,
+        "f1": 0.904
+      },
+      "M4": {
+        "n_on": 64,
+        "precision": 0.623,
+        "recall": 0.75,
+        "f1": 0.681
+      }
+    },
+    "subset_accuracy_m2m3m4": 0.461,
+    "hamming_loss_m2m3m4": 0.245,
+    "aeration_note": "ON clips (-64 dB) are ~27 dB quieter than OFF (-37 dB) on average, but recorded in only one valve config -> cannot be cross-validated and the level drop is likely a recording artifact (pumps idle / different gain), not real aeration."
+  }
+}

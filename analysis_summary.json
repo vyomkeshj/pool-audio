@@ -1,0 +1,113 @@
+{
+  "n_sessions": 190,
+  "states": {
+    "normal": 10,
+    "suction_blockage": 42,
+    "discharge_blockage": 108,
+    "aerating": 16,
+    "multi_pump": 14
+  },
+  "cv_accuracy": 0.8895,
+  "top_features": [
+    {
+      "feature": "mod_energy",
+      "importance": 0.1013
+    },
+    {
+      "feature": "rms_db",
+      "importance": 0.0827
+    },
+    {
+      "feature": "band_16000_22050",
+      "importance": 0.0721
+    },
+    {
+      "feature": "band_8000_16000",
+      "importance": 0.0678
+    },
+    {
+      "feature": "band_250_500",
+      "importance": 0.0667
+    },
+    {
+      "feature": "zcr",
+      "importance": 0.0663
+    },
+    {
+      "feature": "band_1000_2000",
+      "importance": 0.0627
+    },
+    {
+      "feature": "tone_prom",
+      "importance": 0.0613
+    },
+    {
+      "feature": "crest",
+      "importance": 0.054
+    },
+    {
+      "feature": "band_100_250",
+      "importance": 0.053
+    },
+    {
+      "feature": "flatness",
+      "importance": 0.0518
+    },
+    {
+      "feature": "centroid",
+      "importance": 0.0495
+    }
+  ],
+  "per_state_means": {
+    "normal": {
+      "rms_db": -54.476,
+      "centroid": 1012.577,
+      "rolloff": 1782.411,
+      "flatness": 0.009,
+      "tone_freq": 204.565,
+      "tone_prom": 15.535,
+      "mod_energy": -6.036,
+      "band_4000_8000": -15.115
+    },
+    "suction_blockage": {
+      "rms_db": -62.446,
+      "centroid": 777.326,
+      "rolloff": 1379.535,
+      "flatness": 0.005,
+      "tone_freq": 141.248,
+      "tone_prom": 19.539,
+      "mod_energy": -6.989,
+      "band_4000_8000": -15.558
+    },
+    "discharge_blockage": {
+      "rms_db": -40.343,
+      "centroid": 1162.571,
+      "rolloff": 1962.861,
+      "flatness": 0.015,
+      "tone_freq": 381.965,
+      "tone_prom": 15.507,
+      "mod_energy": -5.154,
+      "band_4000_8000": -17.814
+    },
+    "aerating": {
+      "rms_db": -64.175,
+      "centroid": 1349.474,
+      "rolloff": 3285.496,
+      "flatness": 0.008,
+      "tone_freq": 123.816,
+      "tone_prom": 14.426,
+      "mod_energy": -7.318,
+      "band_4000_8000": -9.262
+    },
+    "multi_pump": {
+      "rms_db": -29.225,
+      "centroid": 1111.384,
+      "rolloff": 1573.462,
+      "flatness": 0.02,
+      "tone_freq": 766.351,
+      "tone_prom": 14.718,
+      "mod_energy": -4.135,
+      "band_4000_8000": -19.815
+    }
+  }
+}

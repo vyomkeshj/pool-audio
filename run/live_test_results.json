@@ -1,0 +1,110 @@
+{
+  "window_s": 8.0,
+  "smoothing": "clip = mean prob over a session's windows",
+  "aeration_matched_gain_invariant": {
+    "mic": {
+      "window_acc": 0.9774527726995734,
+      "window_f1": 0.9688114638943524,
+      "clip_acc_single_sensor": 0.9914772727272727,
+      "clip_f1_single_sensor": 0.9881422924901185,
+      "clip_acc_fused_8ch": 1.0,
+      "clip_f1_fused_8ch": 1.0,
+      "n_windows": 4923,
+      "n_single_sensor_clips": 352,
+      "n_recordings": 44,
+      "n_recordings_on": 16
+    },
+    "cam": {
+      "window_acc": 0.9977569331158238,
+      "window_f1": 0.996931659693166,
+      "clip_acc_single_sensor": 1.0,
+      "clip_f1_single_sensor": 1.0,
+      "clip_acc_fused_8ch": 1.0,
+      "clip_f1_fused_8ch": 1.0,
+      "n_windows": 4904,
+      "n_single_sensor_clips": 352,
+      "n_recordings": 44,
+      "n_recordings_on": 16
+    }
+  },
+  "machine_presence": {
+    "M2": {
+      "mic": {
+        "window_acc": 0.8207894736842105,
+        "window_f1": 0.7782120175867122,
+        "clip_acc_single_sensor": 0.8694852941176471,
+        "clip_f1_single_sensor": 0.8367816091954023,
+        "clip_acc_fused_8ch": 0.9779411764705882,
+        "clip_f1_fused_8ch": 0.9724770642201835,
+        "n_windows": 15200,
+        "n_single_sensor_clips": 1088,
+        "n_recordings": 136,
+        "n_recordings_on": 56
+      },
+      "cam": {
+        "window_acc": 0.9262019389302908,
+        "window_f1": 0.9100843712334271,
+        "clip_acc_single_sensor": 0.9558823529411765,
+        "clip_f1_single_sensor": 0.9461883408071748,
+        "clip_acc_fused_8ch": 1.0,
+        "clip_f1_fused_8ch": 1.0,
+        "n_windows": 15163,
+        "n_single_sensor_clips": 1088,
+        "n_recordings": 136,
+        "n_recordings_on": 56
+      }
+    },
+    "M3": {
+      "mic": {
+        "window_acc": 0.939407894736842,
+        "window_f1": 0.9257198161142027,
+        "clip_acc_single_sensor": 0.9568014705882353,
+        "clip_f1_single_sensor": 0.9467723669309174,
+        "clip_acc_fused_8ch": 1.0,
+        "clip_f1_fused_8ch": 1.0,
+        "n_windows": 15200,
+        "n_single_sensor_clips": 1088,
+        "n_recordings": 136,
+        "n_recordings_on": 56
+      },
+      "cam": {
+        "window_acc": 0.9557475433621315,
+        "window_f1": 0.9466316710411199,
+        "clip_acc_single_sensor": 0.9705882352941176,
+        "clip_f1_single_sensor": 0.9642857142857143,
+        "clip_acc_fused_8ch": 1.0,
+        "clip_f1_fused_8ch": 1.0,
+        "n_windows": 15163,
+        "n_single_sensor_clips": 1088,
+        "n_recordings": 136,
+        "n_recordings_on": 56
+      }
+    },
+    "M4": {
+      "mic": {
+        "window_acc": 0.6775,
+        "window_f1": 0.5927218344965105,
+        "clip_acc_single_sensor": 0.7159926470588235,
+        "clip_f1_single_sensor": 0.6351829988193625,
+        "clip_acc_fused_8ch": 0.8161764705882353,
+        "clip_f1_fused_8ch": 0.7619047619047619,
+        "n_windows": 15200,
+        "n_single_sensor_clips": 1088,
+        "n_recordings": 136,
+        "n_recordings_on": 56
+      },
+      "cam": {
+        "window_acc": 0.8506232275934842,
+        "window_f1": 0.8217798410575183,
+        "clip_acc_single_sensor": 0.8768382352941176,
+        "clip_f1_single_sensor": 0.8520971302428256,
+        "clip_acc_fused_8ch": 0.9926470588235294,
+        "clip_f1_fused_8ch": 0.9911504424778761,
+        "n_windows": 15163,
+        "n_single_sensor_clips": 1088,
+        "n_recordings": 136,
+        "n_recordings_on": 56
+      }
+    }
+  }
+}

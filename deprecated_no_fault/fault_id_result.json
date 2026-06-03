@@ -1,0 +1,42 @@
+{
+  "metric": "broadband haystack (3-9 kHz) increment, matched pairs, aeration=0",
+  "per_pump": {
+    "M2": {
+      "mean_dB": 0.079,
+      "median_dB": 0.204,
+      "frac_positive": 0.728,
+      "n_pairs": 448,
+      "cohens_d": 0.01
+    },
+    "M3": {
+      "mean_dB": 3.242,
+      "median_dB": 1.781,
+      "frac_positive": 0.938,
+      "n_pairs": 448,
+      "cohens_d": 0.73
+    },
+    "M4": {
+      "mean_dB": -0.004,
+      "median_dB": 0.03,
+      "frac_positive": 0.558,
+      "n_pairs": 448,
+      "cohens_d": -0.0
+    }
+  },
+  "device_split": {
+    "M2": {
+      "mic": -1.24,
+      "cam": 1.399
+    },
+    "M3": {
+      "mic": 4.276,
+      "cam": 2.208
+    },
+    "M4": {
+      "mic": -0.083,
+      "cam": 0.075
+    }
+  },
+  "damaged_pump": "M3",
+  "reasoning": "A broken fan/impeller injects broadband mid-HF turbulence noise. The pump whose activation adds a large, consistent 3-9 kHz haystack on both mic and cam is the damaged one."
+}

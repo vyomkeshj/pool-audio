@@ -1,0 +1,87 @@
+{
+  "window_s": 8.0,
+  "hop_s": 4.0,
+  "note": "Aeration ON exists only at valve config vin1/vout1 in 5_25. Matched-config CV (vin1/vout1 only) is the honest test; it isolates aeration from the valve confound.",
+  "mic": {
+    "all_5_25_grouped": {
+      "acc": 0.9882297551789078,
+      "f1": 0.9425287356321839,
+      "n": 16992,
+      "n_on": 1792,
+      "n_sessions": 152,
+      "roc_auc": 0.9976080827067669,
+      "tn": 15152,
+      "fp": 48,
+      "fn": 152,
+      "tp": 1640
+    },
+    "matched_vin1vout1_with_level": {
+      "acc": 0.9772496445256957,
+      "f1": 0.9685569904548007,
+      "n": 4923,
+      "n_on": 1792,
+      "n_sessions": 44,
+      "roc_auc": 0.997843782794178,
+      "tn": 3086,
+      "fp": 45,
+      "fn": 67,
+      "tp": 1725
+    },
+    "matched_vin1vout1_gain_invariant": {
+      "acc": 0.9774527726995734,
+      "f1": 0.9688114638943524,
+      "n": 4923,
+      "n_on": 1792,
+      "n_sessions": 44,
+      "roc_auc": 0.9978029683008622,
+      "tn": 3088,
+      "fp": 43,
+      "fn": 68,
+      "tp": 1724
+    },
+    "n_matched": 4923,
+    "n_matched_on": 1792,
+    "n_matched_off": 3131
+  },
+  "cam": {
+    "all_5_25_grouped": {
+      "acc": 0.998879386611619,
+      "f1": 0.9946942194917621,
+      "n": 16955,
+      "n_on": 1792,
+      "n_sessions": 152,
+      "roc_auc": 0.9999907993847805,
+      "tn": 15155,
+      "fp": 8,
+      "fn": 11,
+      "tp": 1781
+    },
+    "matched_vin1vout1_with_level": {
+      "acc": 0.9975530179445351,
+      "f1": 0.9966517857142857,
+      "n": 4904,
+      "n_on": 1792,
+      "n_sessions": 44,
+      "roc_auc": 0.9999757921524972,
+      "tn": 3106,
+      "fp": 6,
+      "fn": 6,
+      "tp": 1786
+    },
+    "matched_vin1vout1_gain_invariant": {
+      "acc": 0.9977569331158238,
+      "f1": 0.996931659693166,
+      "n": 4904,
+      "n_on": 1792,
+      "n_sessions": 44,
+      "roc_auc": 0.9999738196612193,
+      "tn": 3106,
+      "fp": 6,
+      "fn": 5,
+      "tp": 1787
+    },
+    "n_matched": 4904,
+    "n_matched_on": 1792,
+    "n_matched_off": 3112
+  }
+}

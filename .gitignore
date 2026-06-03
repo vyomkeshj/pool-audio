@@ -1,0 +1,33 @@
+# ---- Raw dataset (proprietary, ~67 GB) — never commit ----
+testbed_motor_audio/
+Testbedmotor/
+Testbedmotor5_14/
+Testbedmotor5_15/
+testbedmotor5_25wav/
+testbedmotor5_19wav/
+testbedmotor5_20wav/
+*.wav
+
+# ---- Proprietary protocol source (the derived index JSON is committed instead) ----
+TEF_mic_test_protocol.xlsx
+
+# ---- Trained models (excluded by choice; regenerate from data via the scripts) ----
+*.joblib
+models/
+run/models/
+
+# ---- Regenerable derived caches ----
+*.csv
+*.npz
+
+# ---- Python / OS noise ----
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+.venv/
+venv/
+*.egg-info/
+
+# Office lock files
+.~lock.*#
