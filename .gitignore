@@ -19,6 +19,11 @@ run/models/
 # ---- Regenerable derived caches ----
 *.csv
 *.npz
+# ...but DO commit the small precomputed artifacts the hosted report app needs
+# (the raw audio + models stay out; these let the report render without them):
+!run/signatures.npz
+!run/channels_psd.npz
+!run/features_allch.csv
 
 # ---- Python / OS noise ----
 __pycache__/

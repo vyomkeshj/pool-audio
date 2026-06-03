@@ -67,8 +67,27 @@ def load_channels_psd():
 
 
 SR = 44100
+DATA_ROOT = os.path.dirname(HERE)
 NOISE = {"N": "clean (reference)", "A": "playground", "B": "lawnmower",
          "C": "traffic", "D": "speech", "E": "music"}
+
+
+@st.cache_data
+def audio_available():
+    """The 63 GB raw dataset isn't bundled in the hosted build; pages that read
+    individual WAVs degrade gracefully when it's absent. Set POOLAUDIO_HOSTED=1 to
+    preview the hosted (no-audio) experience locally."""
+    if os.environ.get("POOLAUDIO_HOSTED") == "1":
+        return False
+    return any(os.path.isdir(os.path.join(DATA_ROOT, d)) for d in
+               ("testbedmotor5_25wav", "Testbedmotor5_15", "testbed_motor_audio"))
+
+
+@st.cache_data
+def models_available():
+    if os.environ.get("POOLAUDIO_HOSTED") == "1":
+        return False
+    return os.path.exists(os.path.join(HERE, "models", "valveOut_severity_cam.joblib"))
 
 
 def db(p):
@@ -432,6 +451,15 @@ def page_demo():
     st.title("🎧 Live demo — models on real clips")
     st.caption("Runs the trained models **directly on a dataset recording** (the "
                "reliable, validated path) and compares the prediction to ground truth.")
+    if not (audio_available() and models_available()):
+        st.info("**This hosted build doesn't include the live file-inference demo.** "
+                "It needs the raw dataset (≈63 GB of WAVs) and the trained model "
+                "bundles, which aren't committed to the repo. The model **accuracy** is "
+                "on the *Results* page, and the *Acoustic signatures / Aeration / "
+                "Blockage* pages show exactly what the models key on. To run the live "
+                "demo, clone the repo with the data and launch `./run/run_report.sh` "
+                "locally.")
+        return
     lib = get_library(); lis = get_listener()
 
     c = st.columns(5)
@@ -543,28 +571,34 @@ def page_aeration_compare():
 A direct visual A/B: the **same pump at the same valve setting**, recorded with the
 **aeration air-injector OFF vs ON**. Look at the low end.""")
     dt = st.radio("Sensor", ["cam", "mic"], horizontal=True)
-    if st.button("🎲 Pick a different on/off pair"):
-        st.session_state.pop("aer_pair", None)
-    files = aeration_files(dt)
-    if not files["on"] or not files["off"]:
-        st.warning("No matched aeration files found."); return
-    if "aer_pair" not in st.session_state or st.session_state.get("aer_dt") != dt:
-        import random
-        st.session_state.aer_pair = (random.choice(files["off"]), random.choice(files["on"]))
-        st.session_state.aer_dt = dt
-    off_p, on_p = st.session_state.aer_pair
+    have = audio_available()
+    xo = xn = None; cap = ""
+    if have:
+        if st.button("🎲 Pick a different on/off pair"):
+            st.session_state.pop("aer_pair", None)
+        files = aeration_files(dt)
+        if not files["on"] or not files["off"]:
+            have = False
+        else:
+            if "aer_pair" not in st.session_state or st.session_state.get("aer_dt") != dt:
+                import random
+                st.session_state.aer_pair = (random.choice(files["off"]),
+                                             random.choice(files["on"]))
+                st.session_state.aer_dt = dt
+            off_p, on_p = st.session_state.aer_pair
 
-    def load(p):
-        x, sr = sf.read(p, dtype="float32")
-        if x.ndim > 1:
-            x = x.mean(axis=1)
-        return x
-    xo, xn = load(off_p), load(on_p)
-
-    def psd(x):
-        f, p = ssignal.welch(x - x.mean(), SR, nperseg=8192, noverlap=4096)
-        return f, p
-    fo, po = psd(xo); fn, pn = psd(xn)
+            def load(p):
+                x, sr = sf.read(p, dtype="float32")
+                return x.mean(axis=1) if x.ndim > 1 else x
+            xo, xn = load(off_p), load(on_p)
+            fo, po = ssignal.welch(xo - xo.mean(), SR, nperseg=8192, noverlap=4096)
+            fn, pn = ssignal.welch(xn - xn.mean(), SR, nperseg=8192, noverlap=4096)
+            cap = f"OFF: `{os.path.basename(off_p)}`  ·  ON: `{os.path.basename(on_p)}`"
+    if not have:
+        sigs = load_sigs()
+        fo = fn = sigs["freq"]; po = sigs[f"{dt}_aer_off"]; pn = sigs[f"{dt}_aer_on"]
+        cap = "_hosted build: mean spectra over matched clips — run locally for " \
+              "per-file view + spectrograms_"
 
     st.subheader("Spectrum — aeration OFF vs ON")
     fig, (a1, a2) = plt.subplots(1, 2, figsize=(12, 3.4))
@@ -579,17 +613,17 @@ A direct visual A/B: the **same pump at the same valve setting**, recorded with 
     a2.set_title("Δ = ON − OFF"); a2.grid(alpha=0.2)
     fig.tight_layout(); fig_to_st(fig)
 
-    st.subheader("Spectrogram — low band (0–1500 Hz), where it shows")
-    fig2, (b1, b2) = plt.subplots(1, 2, figsize=(12, 3.0))
-    _spec(b1, xo, 1500, "aeration OFF")
-    _spec(b2, xn, 1500, "aeration ON")
-    fig2.tight_layout(); fig_to_st(fig2)
+    if xo is not None:
+        st.subheader("Spectrogram — low band (0–1500 Hz), where it shows")
+        fig2, (b1, b2) = plt.subplots(1, 2, figsize=(12, 3.0))
+        _spec(b1, xo, 1500, "aeration OFF")
+        _spec(b2, xn, 1500, "aeration ON")
+        fig2.tight_layout(); fig_to_st(fig2)
 
     def band_db(f, p, lo, hi):
         return 10 * np.log10(p[(f >= lo) & (f < hi)].sum() / p.sum() + 1e-12)
     d5010 = band_db(fn, pn, 50, 100) - band_db(fo, po, 50, 100)
-    st.caption(f"OFF: `{os.path.basename(off_p)}`  ·  ON: `{os.path.basename(on_p)}`  "
-               f"· measured 50–100 Hz band change here: **{d5010:+.1f} dB**")
+    st.caption(f"{cap}  · 50–100 Hz band change: **{d5010:+.1f} dB**")
 
     st.subheader("What in the signal tells you aeration is on")
     st.markdown("""
@@ -715,15 +749,16 @@ restricted), and how **suction-at-x differs from discharge-at-x**.""")
                f"(tone ≈{tone(ps):.0f} Hz). They are *not* the same sound — which is "
                "why the two axes are read by separate models.")
 
-    st.subheader("Real clips — spectrograms (0–1500 Hz)")
-    sfp = blockage_file(dt, x, 1); dfp = blockage_file(dt, 1, x)
-    if sfp and dfp:
-        def load(p):
-            y, sr = sf.read(p, dtype="float32"); return y.mean(1) if y.ndim > 1 else y
-        fig3, (b1, b2) = plt.subplots(1, 2, figsize=(12, 3.0))
-        _spec(b1, load(sfp), 1500, f"SUCTION at {x} (vin={x}, vout=1)")
-        _spec(b2, load(dfp), 1500, f"DISCHARGE at {x} (vin=1, vout={x})")
-        fig3.tight_layout(); fig_to_st(fig3)
+    if audio_available():
+        st.subheader("Real clips — spectrograms (0–1500 Hz)")
+        sfp = blockage_file(dt, x, 1); dfp = blockage_file(dt, 1, x)
+        if sfp and dfp:
+            def load(p):
+                y, sr = sf.read(p, dtype="float32"); return y.mean(1) if y.ndim > 1 else y
+            fig3, (b1, b2) = plt.subplots(1, 2, figsize=(12, 3.0))
+            _spec(b1, load(sfp), 1500, f"SUCTION at {x} (vin={x}, vout=1)")
+            _spec(b2, load(dfp), 1500, f"DISCHARGE at {x} (vin=1, vout={x})")
+            fig3.tight_layout(); fig_to_st(fig3)
 
     st.header("What the signal tells you")
     st.markdown("""
