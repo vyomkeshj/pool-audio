@@ -20,7 +20,10 @@ from scipy import signal as ssignal
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
-st.set_page_config(page_title="Pool-Audio — research report", layout="wide")
+try:  # tolerant so a localized wrapper (e.g. run_cz) can set its own config first
+    st.set_page_config(page_title="Pool-Audio — research report", layout="wide")
+except Exception:
+    pass
 plt.rcParams.update({"axes.facecolor": "#15161c", "figure.facecolor": "#0e0f14",
                      "axes.edgecolor": "#444", "text.color": "#e8e8ee",
                      "axes.labelcolor": "#cfcfe0", "xtick.color": "#9aa0b5",

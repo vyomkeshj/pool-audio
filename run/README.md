@@ -353,3 +353,7 @@ robust over loopback; only aeration's margin suffers.
    ordinal axes.
 
 Build the report inputs: `python3 run/signatures.py` (then launch).
+
+## Czech version (`run_cz/`)
+
+`run_cz/report_app.py` is a full Czech localization of the report. It **imports the data loaders, plotting helpers and models from `run/`** (no duplication of artifacts) and translates all text. Launch: `./run_cz/run_report_cz.sh`; deploy with Main file path `run_cz/report_app.py`. Same graceful no-audio behaviour as the English app.
